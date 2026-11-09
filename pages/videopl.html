@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Price List Edit Video Talking Head</title>
+<meta name="description" content="Jasa edit video talking head. Harga per menit, paket bundle hemat sampai 15%.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f2f7;--card:#fff;--text:#1d1d1f;--muted:#6e6e73;--line:rgba(60,60,67,.16);
+  --blue:#007aff;--glass:rgba(242,242,247,.74);--seg:rgba(118,118,128,.12);--thumb:#fff;
+  --wa:#25d366;--shadow:0 1px 2px rgba(0,0,0,.04),0 8px 28px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#000;--card:#1c1c1e;--text:#f5f5f7;--muted:#98989d;--line:rgba(84,84,88,.6);
+  --blue:#0a84ff;--glass:rgba(0,0,0,.66);--seg:rgba(118,118,128,.24);--thumb:#636366;--shadow:none}
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.45;
+  padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:12px}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.wide{max-width:1080px;margin:0 auto;position:relative}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;padding-top:env(safe-area-inset-top,0px);
+  background:var(--glass);-webkit-backdrop-filter:saturate(180%) blur(22px);backdrop-filter:saturate(180%) blur(22px);
+  border-bottom:.5px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:52px}
+.brand{font-weight:600;font-size:17px;letter-spacing:-.01em}
+.pill{font-size:13px;font-weight:500;color:var(--blue);text-decoration:none;padding:6px 14px;border-radius:99px;background:var(--seg)}
+
+/* Hero */
+.hero{padding:44px 20px 8px}
+h1{font-size:clamp(34px,8vw,56px);line-height:1.05;letter-spacing:-.035em;font-weight:700;margin:0 0 14px}
+.sub{font-size:clamp(17px,2.4vw,21px);color:var(--muted);margin:0 0 28px;max-width:34em;letter-spacing:-.01em}
+
+/* Segmented control */
+.seg{position:relative;display:grid;grid-template-columns:1fr 1fr;background:var(--seg);border-radius:12px;padding:3px;max-width:380px}
+.seg button{position:relative;z-index:1;border:0;background:none;font:inherit;font-size:15px;font-weight:600;
+  color:var(--text);padding:9px 0;cursor:pointer;border-radius:10px}
+.thumb{position:absolute;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);background:var(--thumb);
+  border-radius:9px;box-shadow:0 3px 8px rgba(0,0,0,.12),0 1px 1px rgba(0,0,0,.04);
+  transition:transform .32s cubic-bezier(.3,.9,.3,1)}
+.seg[data-tier="premium"] .thumb{transform:translateX(100%)}
+
+/* Section titles */
+#paket{scroll-margin-top:56px}
+h2{font-size:24px;letter-spacing:-.02em;margin:48px 0 14px;font-weight:700}
+.note{color:var(--muted);font-size:14px;margin:6px 0 0}
+
+/* Tier card */
+.group{background:var(--card);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.rate{padding:22px 20px 18px;border-bottom:.5px solid var(--line)}
+.rate b{font-size:38px;letter-spacing:-.03em;font-weight:700}
+.rate span{color:var(--muted);font-size:17px;margin-left:4px}
+.rate p{margin:2px 0 0;color:var(--muted);font-size:15px}
+.group ul{list-style:none;margin:0;padding:0}
+.group li{display:flex;gap:12px;align-items:center;padding:13px 20px;font-size:16px;letter-spacing:-.01em}
+.group li + li{background:linear-gradient(var(--line),var(--line)) top right/calc(100% - 54px) .5px no-repeat}
+.group li svg{flex:none;width:22px;height:22px;color:var(--blue)}
+
+
+/* Jenis video */
+.types{list-style:none;margin:0;padding:0}
+.types li{display:block;padding:16px 20px}
+.types li + li{background:none;border-top:.5px solid var(--line)}
+.types .row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:2px 16px}
+.types strong{font-size:17px;font-weight:600;letter-spacing:-.015em}
+.types .tp{font-size:20px;font-weight:700;letter-spacing:-.02em}
+.types .meta{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.types .eta{display:flex;align-items:center;gap:6px;margin:10px 0 0;font-size:14px;color:var(--muted)}
+.types .eta svg{width:16px;height:16px;flex:none;color:var(--blue)}
+
+/* Carousel */
+.track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:20px;
+  padding:8px 20px 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.card{flex:none;width:clamp(240px,74vw,262px);scroll-snap-align:start;border-radius:26px;padding:22px 22px 20px;
+  background:var(--card);box-shadow:var(--shadow);display:flex;flex-direction:column;
+  transition:background .35s,color .35s}
+.card.premium{background:linear-gradient(160deg,#3a3a3c 0%,#1c1c1e 70%);color:#f5f5f7;
+  box-shadow:0 14px 34px rgba(0,0,0,.28);border:.5px solid rgba(255,255,255,.1)}
+.card .top{display:flex;justify-content:space-between;align-items:center;min-height:28px}
+.card h3{margin:0;font-size:19px;font-weight:600;letter-spacing:-.015em}
+.badge{font-size:12px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(52,199,89,.16);color:#248a3d}
+.premium .badge{background:rgba(48,209,88,.2);color:#6fe28e}
+@media (prefers-color-scheme:dark){.badge{color:#6fe28e}}
+.price{font-size:30px;font-weight:700;letter-spacing:-.03em;margin:26px 0 0;line-height:1.1}
+.was{min-height:22px;margin:4px 0 0;font-size:15px;color:var(--muted);text-decoration:line-through}
+.premium .was{color:#98989d}
+.per{margin:14px 0 22px;font-size:14px;color:var(--muted);flex:1}
+.premium .per{color:#aeaeb2}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:600;font-size:16px;padding:13px;border-radius:14px;
+  background:var(--blue);color:#fff;transition:transform .15s}
+.premium .btn{background:#f5f5f7;color:#1d1d1f}
+.btn:active{transform:scale(.97)}
+
+.dots{display:flex;gap:8px;justify-content:center;margin-top:-6px}
+.dots button{width:8px;height:8px;padding:0;border:0;border-radius:99px;background:var(--muted);opacity:.3;cursor:pointer;
+  transition:width .25s,opacity .25s}
+.dots button[aria-current="true"]{width:22px;opacity:.9}
+.arrow{display:none;position:absolute;top:42%;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;z-index:2;
+  background:var(--glass);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);color:var(--text);
+  box-shadow:0 2px 12px rgba(0,0,0,.18);font-size:20px}
+.arrow.prev{left:-6px}.arrow.next{right:-6px}
+@media (hover:hover) and (min-width:860px){.arrow{display:block}}
+
+
+.nav{display:flex;gap:8px}
+.seg[data-p="facebook"] .thumb{transform:translateX(100%)}
+#portofolio{scroll-margin-top:56px}
+.reel{flex:none;scroll-snap-align:start;background:var(--card);border-radius:24px;
+  box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.reel.ig{width:clamp(270px,76vw,300px)}
+.reel.fb{width:clamp(300px,86vw,480px)}
+.reel .frame{position:relative;overflow:hidden;background:#000;display:block}
+.reel.ig .frame{aspect-ratio:9/16}
+.reel.fb .frame{aspect-ratio:16/9}
+/* Instagram: iframe dilebarkan 143% dan digeser ke atas agar header, footer, dan bar hitam embed terpotong (full frame). Ubah 56px jika header embed berubah. */
+.reel.ig iframe{position:absolute;top:-56px;left:50%;width:143%;height:calc(100% + 56px + 240px);transform:translateX(-50%);border:0}
+.reel.fb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.reel .lnk{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#f5f5f7;text-decoration:none;
+  font-weight:600;font-size:15px;background:linear-gradient(160deg,#3a3a3c,#1c1c1e)}
+.reel .lnk svg{width:56px;height:56px}
+.reel > a:last-child{display:block;text-align:center;padding:13px;font-size:15px;font-weight:600;color:var(--blue);
+  text-decoration:none;border-top:.5px solid var(--line)}
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;max-width:420px;margin:0 auto;background:var(--card);
+  color:var(--blue);text-decoration:none;font-weight:600;font-size:16px;padding:14px;border-radius:14px;box-shadow:var(--shadow)}
+.cta svg{width:20px;height:20px}
+footer a{color:var(--blue);text-decoration:none;font-weight:500}
+
+/* Terms */
+.terms li{display:block;padding:14px 20px;margin:0 !important}
+.terms li + li{background:none;border-top:.5px solid var(--line)}
+.terms strong{display:block;font-size:16px;font-weight:600;letter-spacing:-.01em}
+.terms span{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+
+footer{text-align:center;color:var(--muted);font-size:13px;padding:36px 20px 0}
+
+/* WhatsApp bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));
+  background:var(--glass);-webkit-backdrop-filter:saturate(180%) blur(22px);backdrop-filter:saturate(180%) blur(22px);
+  border-top:.5px solid var(--line)}
+.wa{display:flex;align-items:center;justify-content:center;gap:10px;max-width:480px;margin:0 auto;
+  background:var(--wa);color:#fff;text-decoration:none;font-weight:600;font-size:17px;padding:15px;border-radius:16px;
+  box-shadow:0 6px 18px rgba(37,211,102,.35);transition:transform .15s}
+.wa:active{transform:scale(.98)}
+.wa svg{width:24px;height:24px}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto !important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="brand">Jasa Edit Video</span>
+    <nav class="nav"><a class="pill" href="#paket">Paket</a><a class="pill" href="#portofolio">Portofolio</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <h1>Edit talking head yang terasa premium.</h1>
+    <p class="sub">Harga jelas per menit hasil akhir. Ambil bundle untuk hemat sampai 15%.</p>
+    <div class="seg" id="seg" data-tier="premium" role="group" aria-label="Pilih tier">
+      <span class="thumb"></span>
+      <button type="button" data-tier="standard" aria-pressed="false">Standard</button>
+      <button type="button" data-tier="premium" aria-pressed="true">Premium</button>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>Yang kamu dapat</h2>
+    <div class="group">
+      <div class="rate"><b id="rate"></b><span>/ menit</span><p id="rate-note"></p></div>
+      <ul class="feat" id="feat"></ul>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>Jenis video</h2>
+    <ul class="group types" id="types"></ul>
+    <p class="note">Durasi di antara kisaran dihitung per menit. Minimum order Rp 250.000 per video. Estimasi dihitung dari DP masuk dan semua footage serta brief lengkap diterima.</p>
+  </section>
+
+  <section id="paket">
+    <div class="wrap"><h2>Paket bundle</h2></div>
+    <div class="wide">
+      <button class="arrow prev" id="prev" aria-label="Sebelumnya">&#8249;</button>
+      <button class="arrow next" id="next" aria-label="Berikutnya">&#8250;</button>
+      <div class="track" id="track" tabindex="0" aria-label="Daftar paket bundle"></div>
+      <div class="dots" id="dots"></div>
+    </div>
+    <p class="note wrap">Harga bundle dihitung dengan asumsi 3 menit per video. Durasi lain disesuaikan per menit.</p>
+  </section>
+
+  <section id="portofolio">
+    <div class="wrap">
+      <h2>Portofolio</h2>
+      <div class="seg" id="seg2" data-p="instagram" role="group" aria-label="Pilih platform">
+        <span class="thumb"></span>
+        <button type="button" data-p="instagram" aria-pressed="true">Instagram</button>
+        <button type="button" data-p="facebook" aria-pressed="false">Facebook</button>
+      </div>
+    </div>
+    <div class="wide" style="margin-top:18px">
+      <button class="arrow prev" id="rprev" aria-label="Sebelumnya">&#8249;</button>
+      <button class="arrow next" id="rnext" aria-label="Berikutnya">&#8250;</button>
+      <div class="track" id="reels" tabindex="0" aria-label="Contoh hasil editing"></div>
+    </div>
+    <div class="wrap">
+      <a class="cta" href="https://www.instagram.com/farisalarkan/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+        Lihat lebih banyak di @farisalarkan
+      </a>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>Ketentuan</h2>
+    <ul class="group terms" style="list-style:none;margin:0;padding:0">
+      <li><strong>Minimum order</strong><span>Rp 250.000 per video.</span></li>
+      <li><strong>Durasi</strong><span>Dihitung dari hasil akhir. Raw footage maksimal 3x durasi final, kelebihannya dikenakan biaya tambahan.</span></li>
+      <li><strong>Revisi</strong><span>Satu revisi berarti satu putaran feedback yang dikirim sekaligus. Revisi di luar jatah Rp 50.000 per putaran.</span></li>
+      <li><strong>Pembayaran</strong><span>DP 50% di awal, pelunasan saat file final dikirim.</span></li>
+      <li><strong>Mulai pengerjaan</strong><span>Hitungan waktu dimulai setelah DP masuk dan semua footage serta brief lengkap diterima.</span></li>
+      <li><strong>Waktu revisi</strong><span>Setiap putaran revisi dikerjakan 1–2 hari.</span></li>
+      <li><strong>Pengiriman bundle</strong><span>Bundle dikirim bertahap, 2–3 video per pengiriman. Bundle 8–10 video sekitar 2–3 minggu.</span></li>
+      <li><strong>Pengerjaan kilat</strong><span>Di bawah 48 jam, tambahan 30%.</span></li>
+    </ul>
+  </section>
+</main>
+
+<footer>Harga dapat berubah sewaktu-waktu. Tanyakan dulu lewat WhatsApp.<br><a href="https://www.instagram.com/farisalarkan/" target="_blank" rel="noopener">Instagram @farisalarkan</a></footer>
+
+<div class="bar">
+  <a class="wa" id="wa" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.800 1 1-3.700-.2-.4a9.800 9.800 0 0 1-1.500-5.200c0-5.400 4.400-9.800 9.900-9.800 2.600 0 5.100 1 6.900 2.900a9.700 9.700 0 0 1 2.900 6.900c0 5.400-4.500 9.900-9.900 9.900zm5.400-7.400c-.3-.1-1.800-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.100c-.2.200-.3.200-.6.100-1.700-.8-2.800-1.500-3.900-3.400-.3-.5.300-.5.900-1.600.1-.2 0-.4 0-.5l-.9-2.200c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1 1-1 2.500s1.100 2.900 1.200 3.100c.1.200 2.100 3.300 5.200 4.600 1.900.8 2.700.9 3.600.7.600-.1 1.800-.7 2-1.400.3-.7.300-1.300.2-1.400-.1-.2-.3-.3-.6-.4z"/></svg>
+    <span>Chat via WhatsApp</span>
+  </a>
+</div>
+
+<script>
+const WA_NUMBER = '62895422159690';           // 0895422159690 dalam format internasional
+const RATE = { standard: 200000, premium: 350000 };
+const MENIT = 3;                              // asumsi durasi tiap video di kartu bundle
+const PACKS = [{ n: 1, d: 0 }, { n: 5, d: .05 }, { n: 8, d: .10 }, { n: 10, d: .15 }];
+const FEATURES = {
+  standard: ['Cut rapi (hapus jeda dan filler)', 'Transisi dasar', 'Subtitle', 'Audio cleanup dasar', '1x revisi'],
+  premium: ['Semua fitur Standard', 'Cut & transisi premium', 'Efek video premium', 'Sound design & audio mixing', 'Color correction & grading', '3x revisi']
+};
+const MIN_ORDER = 250000;
+const TYPES = [
+  { n: 'Short-form', d: '15–60 detik untuk Reels, TikTok, Shorts', min: .25, max: 1, eta: { standard: '1 hari', premium: '1–2 hari' } },
+  { n: 'Talking head', d: '3 menit hasil akhir', min: 3, max: 3, eta: { standard: '2–3 hari kerja', premium: '3–5 hari kerja' } },
+  { n: 'YouTube', d: '8–15 menit hasil akhir', min: 8, max: 15, eta: { standard: '3–5 hari kerja', premium: '5–7 hari kerja' } }
+];
+const CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+const NAMA = { standard: 'Standard', premium: 'Premium' };
+const CHECK = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.5 12.4l3 3 6-6.4" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+const $ = id => document.getElementById(id);
+const rp = n => 'Rp ' + Math.round(n).toLocaleString('id-ID');
+const waLink = text => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+let tier = 'premium';
+
+function render() {
+  const rate = RATE[tier];
+  $('seg').dataset.tier = tier;
+  document.querySelectorAll('#seg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.tier === tier));
+  $('rate').textContent = rp(rate);
+  $('rate-note').textContent = tier === 'premium' ? 'Paket lengkap untuk hasil yang terasa sinematik.' : 'Untuk konten yang rapi dan siap upload.';
+  $('feat').innerHTML = FEATURES[tier].map(t => `<li>${CHECK}<span>${t}</span></li>`).join('');
+
+  $('types').innerHTML = TYPES.map(t => {
+    const lo = Math.max(MIN_ORDER, rate * t.min), hi = Math.max(MIN_ORDER, rate * t.max);
+    const price = lo === hi ? rp(lo) : rp(lo) + ' – ' + rp(hi).replace('Rp ', '');
+    return `<li><div class="row"><div><strong>${t.n}</strong><span class="meta">${t.d}</span></div><b class="tp">${price}</b></div>
+      <p class="eta">${CLOCK}Estimasi ${t.eta[tier]}</p></li>`;
+  }).join('');
+
+  $('track').innerHTML = PACKS.map(p => {
+    const full = rate * MENIT * p.n, total = full * (1 - p.d);
+    const msg = `Halo, saya tertarik dengan paket ${NAMA[tier]} untuk ${p.n} video. Boleh minta info lebih lanjut?`;
+    return `<article class="card ${tier}">
+      <div class="top"><h3>${p.n} video</h3>${p.d ? `<span class="badge">Hemat ${p.d * 100}%</span>` : ''}</div>
+      <p class="price">${rp(total)}</p>
+      <p class="was">${p.d ? rp(full) : ''}</p>
+      <p class="per">Sekitar ${rp(total / p.n)} per video, ${MENIT} menit hasil akhir.</p>
+      <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">Pilih paket</a>
+    </article>`;
+  }).join('');
+
+  $('dots').innerHTML = PACKS.map((p, i) => `<button type="button" aria-label="Paket ${p.n} video" data-i="${i}"></button>`).join('');
+  $('wa').href = waLink(`Halo, saya tertarik dengan paket ${NAMA[tier]} untuk jasa edit video talking head. Boleh minta info lebih lanjut?`);
+  updateDots();
+}
+
+const track = $('track');
+const step = () => { const c = track.querySelector('.card'); return c ? c.offsetWidth + 14 : 270; };
+function updateDots() {
+  const i = Math.min(PACKS.length - 1, Math.max(0, Math.round(track.scrollLeft / step())));
+  document.querySelectorAll('#dots button').forEach((b, k) => b.setAttribute('aria-current', k === i));
+}
+track.addEventListener('scroll', () => requestAnimationFrame(updateDots), { passive: true });
+$('dots').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (b) track.scrollTo({ left: b.dataset.i * step(), behavior: 'smooth' });
+});
+$('prev').onclick = () => track.scrollBy({ left: -step(), behavior: 'smooth' });
+$('next').onclick = () => track.scrollBy({ left: step(), behavior: 'smooth' });
+$('seg').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b || b.dataset.tier === tier) return;
+  tier = b.dataset.tier; const x = track.scrollLeft; render(); track.scrollLeft = x;
+});
+render();
+const IG = [{ t: 'p', c: 'DeYftlSyKOH' }, { t: 'p', c: 'DfBLMejyu3D' }, { t: 'reel', c: 'Dei6aZfyTga' }];
+const FB = [
+  { u: 'https://www.facebook.com/reel/1296619875627722' },
+  { u: 'https://www.facebook.com/reel/28529085766753337', link: true }, // embed diblokir Facebook, tampil sebagai kartu link
+  { u: 'https://www.facebook.com/reel/3312202622284318' },
+  { u: 'https://www.facebook.com/reel/1092089163185790' }
+];
+const PLAY = '<svg viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="26" stroke="currentColor" stroke-width="2.5"/><path d="M23 18.5v19l16-9.5z" fill="currentColor"/></svg>';
+let plat = 'instagram';
+function renderReels() {
+  $('seg2').dataset.p = plat;
+  document.querySelectorAll('#seg2 button').forEach(b => b.setAttribute('aria-pressed', b.dataset.p === plat));
+  const fw = Math.round(Math.max(300, Math.min(480, window.innerWidth * 0.86))), fh = Math.round(fw * 9 / 16);
+  $('reels').innerHTML = plat === 'instagram'
+    ? IG.map(v => { const u = `https://www.instagram.com/${v.t}/${v.c}/`;
+        return `<article class="reel ig"><div class="frame"><iframe src="${u}embed/" title="Video Instagram" loading="lazy" scrolling="no" allowfullscreen></iframe></div><a href="${u}" target="_blank" rel="noopener">Buka di Instagram</a></article>`; }).join('')
+    : FB.map(v => `<article class="reel fb">${v.link
+        ? `<a class="frame lnk" href="${v.u}" target="_blank" rel="noopener">${PLAY}<span>Tonton di Facebook</span></a>`
+        : `<div class="frame"><iframe src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(v.u)}&show_text=false&width=${fw}&height=${fh}" title="Reel Facebook" loading="lazy" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>`}<a href="${v.u}" target="_blank" rel="noopener">Buka di Facebook</a></article>`).join('');
+  $('reels').scrollLeft = 0;
+}
+const rstep = () => { const c = $('reels').querySelector('.reel'); return c ? c.offsetWidth + 14 : 354; };
+$('rprev').onclick = () => $('reels').scrollBy({ left: -rstep(), behavior: 'smooth' });
+$('rnext').onclick = () => $('reels').scrollBy({ left: rstep(), behavior: 'smooth' });
+$('seg2').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b || b.dataset.p === plat) return;
+  plat = b.dataset.p; renderReels();
+});
+renderReels();
+</script>
+</body>
+</html>
